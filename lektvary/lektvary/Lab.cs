@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace lektvary
 {
+     
     class Lab
     { 
         public int PocetLektvaru { get; set; }
@@ -26,7 +27,7 @@ namespace lektvary
             {
                 foreach (Lektvar lektvar in list)
                 {
-                    if (lektvar.Previous == null || List<Lektvar>.TrueForAll(lektvar.Previous, el => el.Hotovo))
+                    if (lektvar.Previous == null || lektvar.Previous.TrueForAll(el => el.Hotovo))
                     {
                         lektvar.Priprav();
                         list.Remove(lektvar);
